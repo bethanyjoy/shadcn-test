@@ -1,0 +1,15 @@
+# Storybook files
+.storybook/
+src/stories/
+storybook-static/
+
+# Development files
+*.stories.tsx
+*.stories.ts
+*.stories.js
+*.stories.jsx
+*.stories.mdx
+
+# Build artifacts
+.next/
+node_modules/ 
