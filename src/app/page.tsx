@@ -1,12 +1,12 @@
-import { Button } from "@/components/ui/button";
+import { ButtonCustom } from "@/components/ui/button-custom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import { InputCustom } from "@/components/ui/input-custom";
 import { Label } from "@/components/ui/label";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
+import { TextareaCustom } from "@/components/ui/textarea-custom";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Switch } from "@/components/ui/switch";
@@ -25,6 +25,9 @@ export default function Home() {
           <p className="text-muted-foreground mt-2">
             A comprehensive demo of all available shadcn/ui components
           </p>
+          {/* <div className="mt-4">
+            <a href="/button-custom-demo" className="inline-block px-4 py-2 rounded bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition">ButtonCustom Demo Page</a>
+          </div> */}
         </div>
 
         {/* Form Components Section */}
@@ -40,7 +43,7 @@ export default function Home() {
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input
+                  <InputCustom
                     id="email"
                     type="email"
                     placeholder="Enter your email"
@@ -48,7 +51,7 @@ export default function Home() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="password">Password</Label>
-                  <Input
+                  <InputCustom
                     id="password"
                     type="password"
                     placeholder="Enter your password"
@@ -66,7 +69,7 @@ export default function Home() {
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
-                  <Textarea
+                  <TextareaCustom
                     id="message"
                     placeholder="Enter your message here..."
                     className="min-h-[100px]"
@@ -173,19 +176,78 @@ export default function Home() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex flex-wrap gap-2">
-                  <Button variant="default">Default</Button>
-                  <Button variant="secondary">Secondary</Button>
-                  <Button variant="destructive">Destructive</Button>
+                  <ButtonCustom variant="default">Default</ButtonCustom>
+                  <ButtonCustom variant="secondary">Secondary</ButtonCustom>
+                  <ButtonCustom variant="destructive">Destructive</ButtonCustom>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  <Button variant="outline">Outline</Button>
-                  <Button variant="ghost">Ghost</Button>
-                  <Button variant="link">Link</Button>
+                  <ButtonCustom variant="outline">Outline</ButtonCustom>
+                  <ButtonCustom variant="ghost">Ghost</ButtonCustom>
+                  <ButtonCustom variant="link">Link</ButtonCustom>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  <Button size="sm">Small</Button>
-                  <Button size="default">Default</Button>
-                  <Button size="lg">Large</Button>
+                  <ButtonCustom size="sm">Small</ButtonCustom>
+                  <ButtonCustom size="default">Default</ButtonCustom>
+                  <ButtonCustom size="lg">Large</ButtonCustom>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <ButtonCustom variant="default">
+                    <svg
+                      className="mr-2 h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 4v16m8-8H4"
+                      />
+                    </svg>
+                    Add Item
+                  </ButtonCustom>
+                  <ButtonCustom variant="outline">
+                    <svg
+                      className="mr-2 h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                      />
+                    </svg>
+                    Like
+                  </ButtonCustom>
+                  <ButtonCustom variant="ghost">
+                    <svg
+                      className="mr-2 h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                      />
+                    </svg>
+                    View
+                  </ButtonCustom>
                 </div>
               </CardContent>
             </Card>
@@ -199,7 +261,7 @@ export default function Home() {
               <CardContent className="space-y-4">
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button variant="outline">Open Dialog</Button>
+                    <ButtonCustom variant="outline">Open Dialog</ButtonCustom>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[425px]">
                     <DialogHeader>
@@ -213,7 +275,7 @@ export default function Home() {
                         <Label htmlFor="name" className="text-right">
                           Name
                         </Label>
-                        <Input
+                        <InputCustom
                           id="name"
                           defaultValue="Pedro Duarte"
                           className="col-span-3"
@@ -223,7 +285,7 @@ export default function Home() {
                         <Label htmlFor="username" className="text-right">
                           Username
                         </Label>
-                        <Input
+                        <InputCustom
                           id="username"
                           defaultValue="@peduarte"
                           className="col-span-3"
@@ -231,8 +293,8 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="flex justify-end gap-2">
-                      <Button variant="outline">Cancel</Button>
-                      <Button>Save changes</Button>
+                      <ButtonCustom variant="outline">Cancel</ButtonCustom>
+                      <ButtonCustom>Save changes</ButtonCustom>
                     </div>
                   </DialogContent>
                 </Dialog>
@@ -248,7 +310,7 @@ export default function Home() {
               <CardContent className="space-y-4">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="outline">Open Menu</Button>
+                    <ButtonCustom variant="outline">Open Menu</ButtonCustom>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-56">
                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -282,8 +344,8 @@ export default function Home() {
                   Cards are perfect for displaying content in a structured way.
                 </p>
                 <div className="mt-4 flex gap-2">
-                  <Button>Primary Action</Button>
-                  <Button variant="outline">Secondary Action</Button>
+                  <ButtonCustom>Primary Action</ButtonCustom>
+                  <ButtonCustom variant="outline">Secondary Action</ButtonCustom>
                 </div>
               </CardContent>
             </Card>
